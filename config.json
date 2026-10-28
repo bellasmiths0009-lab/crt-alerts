@@ -1,0 +1,12 @@
+{
+  "timezone": "Africa/Lagos",
+  "timeframes": ["H4", "D"],
+  "pairs": [
+    {"name": "XAUUSD", "provider": "oanda", "symbol": "XAU_USD"},
+    {"name": "GBPUSD", "provider": "oanda", "symbol": "GBP_USD"},
+    {"name": "NAS100", "provider": "oanda", "symbol": "NAS100_USD"},
+    {"name": "GBPJPY", "provider": "oanda", "symbol": "GBP_JPY"},
+    {"name": "USDCAD", "provider": "oanda", "symbol": "USD_CAD"},
+    {"name": "BTCUSD", "provider": "kraken", "symbol": "XBTUSD"}
+  ]
+}
