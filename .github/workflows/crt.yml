@@ -2,7 +2,7 @@ name: CRT alerts
 
 on:
   schedule:
-    - cron: "45 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:
