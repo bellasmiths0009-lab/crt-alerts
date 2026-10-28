@@ -71,9 +71,9 @@ def detect_crt(p, c):
     inside = p["l"] < c["c"] < p["h"]
     mid = (p["h"] + p["l"]) / 2
     if c["h"] > p["h"] and c["l"] >= p["l"] and inside:
-        return {"side": "BEARISH", "swept": "high", "strong": c["c"] > mid, "mid": mid}
+        return {"side": "BEARISH", "swept": "high", "strong": c["c"] < mid, "mid": mid}
     if c["l"] < p["l"] and c["h"] <= p["h"] and inside:
-        return {"side": "BULLISH", "swept": "low", "strong": c["c"] < mid, "mid": mid}
+        return {"side": "BULLISH", "swept": "low", "strong": c["c"] > mid, "mid": mid}
     return None
 
 
