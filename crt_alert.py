@@ -81,18 +81,38 @@ def fmt_time(t, tz):
     return t.astimezone(tz).strftime("%a %d %b %H:%M")
 
 
+
 def build_message(name, tf, p, c, r, tz):
-    arrow = "\U0001F7E2" if r["side"] == "BULLISH" else "\U0001F534"
+    arrow = "🟢" if r["side"] == "BULLISH" else "🔴"
+    direction = r["side"]
+    swept = r["swept"].upper()
+
     lines = [
-        f"{arrow} CRT {r['side']}: {name} ({TF_LABEL[tf]})",
-        f"Candle 1 (parent): {fmt_time(p['t'], tz)}",
-        f"Candle 2 (CRT): {fmt_time(c['t'], tz)}",
-        f"Swept parent {r['swept']}, closed back inside",
-        f"Parent high {p['h']:.5g} | 50% {r['mid']:.5g} | low {p['l']:.5g}",
+        f"{arrow} CRT SIGNAL — {name}",
+        f"━━━━━━━━━━━━━━",
+        f"Direction: {direction}",
+        f"Timeframe: {TF_LABEL[tf]}",
+        "",
+        "KEY LEVELS",
+        f"Parent High: {p['h']:.5g}",
+        f"50% Midpoint: {r['mid']:.5g}",
+        f"Parent Low: {p['l']:.5g}",
+        "",
+        "CONFIRMATION",
+        f"✓ Parent {swept} swept",
+        "✓ Candle closed back inside parent range",
     ]
+
     if r["strong"]:
-        lines.append("Strong rejection: close did not reach 50%")
-    lines.append("Candle times are open times (" + str(tz) + "). Check your chart.")
+        lines.append(f"✓ Strong rejection at 50% midpoint")
+
+    lines.extend([
+        "",
+        f"CRT candle time: {fmt_time(c['t'], tz)}",
+        f"Timezone: {tz}",
+        "Confirm levels on your chart."
+    ])
+
     return "\n".join(lines)
 
 
