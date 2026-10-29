@@ -1,3 +1,4 @@
+
 {
   "timezone": "Africa/Lagos",
   "timeframes": ["H4", "D"],
@@ -7,6 +8,14 @@
     {"name": "NAS100", "provider": "oanda", "symbol": "NAS100_USD"},
     {"name": "GBPJPY", "provider": "oanda", "symbol": "GBP_JPY"},
     {"name": "USDCAD", "provider": "oanda", "symbol": "USD_CAD"},
-    {"name": "BTCUSD", "provider": "kraken", "symbol": "XBTUSD"}
+    {"name": "BTCUSD", "provider": "kraken", "symbol": "XBTUSD"},
+    {"name": "EURUSD", "provider": "oanda", "symbol": "EUR_USD"},
+    {"name": "USDJPY", "provider": "oanda", "symbol": "USD_JPY"},
+    {"name": "AUDUSD", "provider": "oanda", "symbol": "AUD_USD"},
+    {"name": "NZDUSD", "provider": "oanda", "symbol": "NZD_USD"},
+    {"name": "USDCHF", "provider": "oanda", "symbol": "USD_CHF"},
+    {"name": "EURJPY", "provider": "oanda", "symbol": "EUR_JPY"},
+    {"name": "EURGBP", "provider": "oanda", "symbol": "EUR_GBP"},
+    {"name": "AUDJPY", "provider": "oanda", "symbol": "AUD_JPY"}
   ]
 }
